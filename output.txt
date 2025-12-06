@@ -1,0 +1,29 @@
+--- AIO Pump Noise Fixer ---
+Traceback (most recent call last):
+  File "C:\Users\mgant\OneDrive\Desktop2\fanfix\pump_fix.py", line 209, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\mgant\OneDrive\Desktop2\fanfix\pump_fix.py", line 185, in main
+    computer.Open()
+    ~~~~~~~~~~~~~^^
+System.IO.FileNotFoundException: Could not load file or assembly 'HidSharp, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.
+
+File name: 'HidSharp, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null'
+
+   at LibreHardwareMonitor.Hardware.Controller.AquaComputer.AquaComputerGroup..ctor(ISettings settings)
+
+   at LibreHardwareMonitor.Hardware.Computer.AddGroups()
+
+   at LibreHardwareMonitor.Hardware.Computer.Open()
+
+
+
+WRN: Assembly binding logging is turned OFF.
+
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+
+Note: There is some performance penalty associated with assembly bind failure logging.
+
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+
