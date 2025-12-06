@@ -45,6 +45,7 @@ class MockComputer:
         class Type:
             Control = "Control"
             Fan = "Fan"
+            Temperature = "Temperature"
         self.SensorType = Type()
         
         # Add sensors
@@ -56,8 +57,11 @@ class MockComputer:
         
         s3 = MockSensor("Pump Control", "Control", 100)
         s3.SensorType = self.SensorType.Control
+
+        s4 = MockSensor("CPU Core", "Temperature", 45.5)
+        s4.SensorType = self.SensorType.Temperature
         
-        mobo.Sensors = [s1, s2, s3]
+        mobo.Sensors = [s1, s2, s3, s4]
         self.Hardware.append(mobo)
 
     def Open(self): print("[SIM] Computer.Open()")
@@ -109,7 +113,10 @@ def list_sensors(computer):
                 print(f"  - Control: {sensor.Name:<20} | Value: {sensor.Value:>5.1f} %")
                 found_any = True
             elif "Fan" in s_type:
-                print(f"  - Sensor:  {sensor.Name:<20} | Value: {sensor.Value:>5.0f} RPM")
+                print(f"  - Fan:     {sensor.Name:<20} | Value: {sensor.Value:>5.0f} RPM")
+                found_any = True
+            elif "Temperature" in s_type:
+                print(f"  - Temp:    {sensor.Name:<20} | Value: {sensor.Value:>5.1f} °C")
                 found_any = True
     
     if not found_any:
